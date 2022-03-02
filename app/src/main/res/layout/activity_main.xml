@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -18,8 +17,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
+            android:fontFamily="@font/quicksand_bold"
             android:text="@string/score_board"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="@dimen/text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,8 +30,9 @@
             android:id="@+id/player1TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_medium"
             android:text="@string/player_1_0"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="@dimen/text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,8 +42,9 @@
             android:id="@+id/player2TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_medium"
             android:text="@string/player_2_0"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="@dimen/text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -163,16 +165,52 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnReset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple"
+            android:fontFamily="@font/quicksand_bold"
             android:padding="15dp"
-            android:text="@string/reset_game"
+            android:src="@drawable/ic_baseline_refresh_24"
             android:textStyle="bold" />
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:visibility="gone"
+                android:id="@+id/lottie1"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="-80dp"
+                android:elevation="5dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/confetti_day" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:visibility="gone"
+                android:id="@+id/lottie2"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="90dp"
+                android:elevation="5dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/confetti_day" />
+
+        </FrameLayout>
     </RelativeLayout>
 
 </LinearLayout>

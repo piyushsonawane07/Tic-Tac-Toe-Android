@@ -1,13 +1,20 @@
 package com.example.tictactoe
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import com.airbnb.lottie.LottieAnimationView
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val btnReset: Button = findViewById(R.id.btnReset)
+        val btnReset: ImageButton = findViewById(R.id.btnReset)
         btnReset.setOnClickListener {
             player1Points = 0
             player2Points = 0
@@ -124,15 +131,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun win(player:Int){
 
+        val l1:LottieAnimationView = findViewById(R.id.lottie1)
+        val l2:LottieAnimationView = findViewById(R.id.lottie2)
         if(player == 1 ) player1Points++ else player2Points++
+
+        l1.visibility = View.VISIBLE
+        l2.visibility = View.VISIBLE
 
         Toast.makeText(applicationContext,"Player $player Won!", Toast.LENGTH_SHORT).show()
         updateScore()
-        clearBoard()
+        Handler().postDelayed(Runnable {
+           clearBoard()
+        },2000)
     }
 
 
     private fun clearBoard() {
+        val l1:LottieAnimationView = findViewById(R.id.lottie1)
+        val l2:LottieAnimationView = findViewById(R.id.lottie2)
         for (i in 0..2){
             for (j in 0..2){
                 buttons[i][j].setImageResource(0)
@@ -141,6 +157,10 @@ class MainActivity : AppCompatActivity() {
 
         roundCount = 0
         player1Turn = true
+
+        l1.visibility = View.GONE
+        l2.visibility = View.GONE
+
     }
 
     private fun updateScore() {

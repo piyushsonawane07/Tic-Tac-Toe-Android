@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable-v24/ripple.xml" value="0.26205128205128203" />
         <entry key="..\:/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/custom_button.xml" value="0.26205128205128203" />
         <entry key="..\:/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/ic_ellipse.xml" value="0.26205128205128203" />
         <entry key="..\:/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/ic_img_splash.xml" value="0.26205128205128203" />
